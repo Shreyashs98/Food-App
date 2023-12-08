@@ -29,7 +29,8 @@ const Header = () => {
     <header>
       <nav className='navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-dark bg-dark navbar-custom'>
         <Link className='navbar-brand' to='/' onClick={closeNavbar}>
-        <i class="bi bi-journals"></i> Book Library
+        {/* <i class="bi bi-journals"></i>  */}
+        Food App
         </Link>
         <button
   className='navbar-toggler'
@@ -42,7 +43,7 @@ const Header = () => {
         <div className={`collapse navbar-collapse show-custom${isNavOpen ? ' show' : ''}`} id='navbarColor01'>
           <ul className='navbar-nav ml-auto'>
             <li className='nav-item active'>
-              <Link className='nav-link' onClick={closeNavbar}>
+              <Link className='nav-link' to='/'>
               <i class="bi bi-house"></i> Home <span className='sr-only'>(current)</span>
               </Link>
             </li>
@@ -50,7 +51,8 @@ const Header = () => {
               <>
                 <li className='nav-item'>
                   <Link className='nav-link' to='/books' onClick={closeNavbar}>
-                  <i class="bi bi-book"></i> Books
+                  {/* <i class="bi bi-book"></i>  */}
+                  Restaurants
                   </Link>
                 </li>
                 <li className='nav-item dropdown'>
@@ -64,9 +66,9 @@ const Header = () => {
                     <i class="bi bi-person-circle"></i> {userInfo.name}
                   </Link>
                   <div className='dropdown-menu'>
-                    <Link className='dropdown-item' to='/profile' onClick={closeNavbar}>
+                    {/* <Link className='dropdown-item' to='/profile' onClick={closeNavbar}>
                       Profile
-                    </Link>
+                    </Link> */}
                     <Link className='dropdown-item' to='/user-update' onClick={closeNavbar}>
                       Change Password
                     </Link>

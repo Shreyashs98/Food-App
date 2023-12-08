@@ -10,10 +10,10 @@ const BookSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    published: {
-      type: Date,
-      required: true,
-    },
+    // published: {
+    //   type: Date,
+    //   required: true,
+    // },
     title: {
       type: String,
       required: true,
@@ -24,6 +24,10 @@ const BookSchema = new mongoose.Schema(
       required: true,
     },
     bookImage: {
+      type: String,
+      
+    },
+    bookImageMenu: {
       type: String,
       
     },

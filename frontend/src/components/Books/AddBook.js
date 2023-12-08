@@ -8,7 +8,8 @@ const AddBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [bookImage, setBookImage] = useState('');
-  const [published, setPublishedDate] = useState('');
+  const [bookImageMenu, setBookImageMenu]= useState('');
+  // const [published, setPublishedDate] = useState('');
 
   const userLogin = useSelector(state => state.userLogin);
   const { userInfo } = userLogin;
@@ -22,7 +23,8 @@ const AddBook = () => {
       title,
       author,
       bookImage,
-      published,
+      bookImageMenu,
+      // published,
       createdBy: userInfo && userInfo._id,
     };
     dispatch(createBook(data));
@@ -39,74 +41,50 @@ const AddBook = () => {
     <div className='container'>
       <div className='row justify-content-center'>
         <div className='col-lg-6 col-md-8'>
-          <h1 className='text-center'>Add Book</h1>
+          <h1 className='text-center'>Add Restaurant Details</h1>
           <form onSubmit={formSubmitHandler}>
             <fieldset>
               <div className='form-group'>
-                <label htmlFor='category'>Select Category</label>
+                <label htmlFor='category'>Select Restaurant Type</label>
                 <select
                   id='category'
                   value={category}
                   onChange={e => setCategory(e.target.value)}
                   className='custom-select'
                 >
-                  <option value='null' default>Select Any Genre</option>
-                  <option value='programming'>Programming</option>
-                  <option value='religion'>Religion</option>
-                  <option value='life'>Life</option>
-                  <option value='culture'>Culture</option>
-                  <option value='history'>History</option>
-                  <option value='science'>Science</option>
-                  <option value='fantasy'>Fantasy</option>
-                  <option value='romance'>Romance</option>
-                  <option value='mystery'>Mystery</option>
-                  <option value='education'>Education</option>
-                  <option value='self-help'>Self-Help</option>
-                  <option value='biography'>Biography</option>
-                  <option value='cooking'>Cooking</option>
-                  <option value='travel'>Travel</option>
-                  <option value='health'>Health</option>
-                  <option value='sports'>Sports</option>
-                  <option value='technology'>Technology</option>
+                  <option value='Veg' default>Select Any</option>
+                  <option value='Non-Veg'>Veg</option>
+                  <option value='religion'>Non-Veg</option>
+                  <option value='Veg&Non-Veg'>Veg & Non-Veg</option>
                 </select>
               </div>
 
               <div className='form-group'>
-                <label htmlFor='author'>Author</label>
+                <label htmlFor='author'>Location</label>
                 <input
                   id='author'
                   value={author}
                   onChange={e => setAuthor(e.target.value)}
                   type='text'
                   className='form-control'
-                  placeholder='Author name'
+                  placeholder='Location'
                 />
               </div>
 
               <div className='form-group'>
-                <label htmlFor='title'>Title</label>
+                <label htmlFor='title'>Restaurant Name</label>
                 <input
                   id='title'
                   value={title}
                   onChange={e => setTitle(e.target.value)}
                   type='text'
                   className='form-control'
-                  placeholder='Book title'
-                />
-              </div>
-              <div className='form-group'>
-                <label htmlFor='publishedDate'>Published Date</label>
-                <input
-                  id='publishedDate'
-                  value={published}
-                  onChange={e => setPublishedDate(e.target.value)}
-                  type='date'
-                  className='form-control'
+                  placeholder='Restaurant Name'
                 />
               </div>
 
               <div className='form-group'>
-                <label htmlFor='bookImage'>Book Image URL</label>
+                <label htmlFor='bookImage'>Restaurant Logo</label>
                 <input
                   id='bookImage'
                   value={bookImage}
@@ -116,9 +94,20 @@ const AddBook = () => {
                   placeholder='Enter image URL'
                 />
               </div>
+              <div className='form-group'>
+                <label htmlFor='bookImageMenu'>Restaurant Menu</label>
+                <input
+                  id='bookImageMenu'
+                  value={bookImageMenu}
+                  onChange={e => setBookImageMenu(e.target.value)}
+                  type='text'
+                  className='form-control'
+                  placeholder='Enter image URL'
+                />
+              </div>
 
               <button type='submit' className='btn btn-success btn-block'>
-                Create Book
+                Add Restaurant
               </button>
             </fieldset>
           </form>

@@ -73,7 +73,7 @@ const Books = () => {
             <input
               type='text'
               className='form-control form-control-sm flex-grow-1 ml-2'
-              placeholder='Search by book title, author, genre, or publish date...'
+              placeholder='Search...'
               value={searchTerm}
               onChange={handleSearch}
             />
@@ -82,9 +82,9 @@ const Books = () => {
             <table className='table table-hover'>
               <thead>
                 <tr>
-                  <th scope='col'>Book Image</th>
-                  <th scope='col'>Book Title</th>
-                  <th scope='col'>Author</th>
+                  <th scope='col'>Restaurant Logo</th>
+                  <th scope='col'>Restaurant Name</th>
+                  <th scope='col'>Location</th>
                   <th scope='col'>Actions</th>
                 </tr>
               </thead>
