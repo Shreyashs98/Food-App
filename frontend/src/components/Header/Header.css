@@ -1,0 +1,85 @@
+/* Header.css */
+
+/* Navbar container styles */
+.navbar {
+  background: linear-gradient(to bottom, #20232a, #2c3e50); /* Gradient background */
+  padding: 10px 0;
+  padding-left: 15px; /* Add left space */
+  padding-right: 15px; /* Add right space */
+}
+
+/* Navbar brand/link styles */
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s, background-color 0.3s;
+  text-transform: uppercase; /* Uppercase text */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+  color: #ffc107;
+  background-color: #333; /* Background color on hover */
+}
+
+/* Navbar dropdown menu styles */
+.dropdown-menu {
+  background-color: #333;
+  border: none; /* Remove the border */
+}
+
+.dropdown-item {
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: #ffc107;
+  color: #333;
+}
+
+/* Active link styles */
+.nav-item.active .nav-link {
+  background-color: #ffc107;
+  color: #333;
+  border-radius: 4px; /* Rounded corners for active link */
+}
+
+/* Divider styles */
+.dropdown-divider {
+  background-color: #fff;
+}
+
+.navbar-toggler-icon:before {
+  content: "\2630"; /* Hamburger icon (Unicode) */
+  font-size: 24px;
+  color: #fff;
+  transition: transform 0.3s;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon:before {
+  transform: scale(1.1); /* Scale up the icon on hover */
+}
+
+/* Responsive Navbar Collapse */
+.collapse.navbar-collapse.show {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for mobile menu */
+  padding: 10px;
+}
+
+/* Navbar text on small screens */
+.navbar-nav .nav-link {
+  font-size: 14px;
+  padding: 8px 15px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  /* Navbar text on larger screens */
+  .navbar-nav .nav-link {
+    font-size: 16px;
+    padding: 8px 20px;
+  }
+}
