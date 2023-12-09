@@ -9,7 +9,7 @@ const BookDetailsModal = ({ show, onHide, book }) => {
       <Modal.Header closeButton>
         <Modal.Title>Restaurant Details</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body >
         <div className='d-flex align-items-center'>
           <div className='mr-3'>
             <img src={book?.bookImageMenu} alt='Menu' style={{ width: '450px' }} />

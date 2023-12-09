@@ -1,19 +1,33 @@
 require('dotenv').config();
-const path = require('path');
 const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
+const morgan = require('morgan');
+const path = require('path');
 const routes = require('./routes/userRoutes');
 const error = require('./middlewares/errorMiddleware');
 const bookRouter = require('./routes/bookRoutes');
-const cors = require('cors');
-require('./config/dbConnect')();
+const dbConnect = require('./config/dbConnect');
 
 const app = express();
 
 // Enable CORS for all routes
 app.use(cors());
 
-// Routes
+// Security headers
+app.use(helmet());
+
+// Logging
+app.use(morgan('dev'));
+
+// Body parser
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Serve static files (adjust the path as needed)
+app.use('/static', express.static(path.join(__dirname, 'public')));
+
+// Routes
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
@@ -24,6 +38,9 @@ app.use('/api/books', bookRouter.bookRouter);
 // Catch Error
 app.use(error.notfoundErrorMiddleware);
 app.use(error.errorMiddlewareHandler);
+
+// Database connection
+dbConnect();
 
 // End of deployment
 const PORT = process.env.PORT || 5000;

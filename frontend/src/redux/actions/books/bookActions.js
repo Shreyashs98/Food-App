@@ -26,11 +26,13 @@ export const createBook = bookData => {
         type: CREATE_BOOK_REQUEST,
         loading: true,
       });
+
       const config = {
         headers: {
           'Content-Type': 'application/json',
         },
       };
+
       const { data } = await axios.post(`${backendUrl}/api/books`, bookData, config);
 
       dispatch({
@@ -38,6 +40,8 @@ export const createBook = bookData => {
         payload: data,
       });
     } catch (error) {
+      console.error("Error creating book:", error);
+
       dispatch({
         type: CREATE_BOOK_FAIL,
         error: error.response && error.response.data.message,

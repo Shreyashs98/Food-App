@@ -28,10 +28,14 @@ const Header = () => {
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-dark bg-dark navbar-custom'>
-        <Link className='navbar-brand' to='/' onClick={closeNavbar}>
-        {/* <i class="bi bi-journals"></i>  */}
-        Food App
-        </Link>
+      <Link className='navbar-brand' to='/' onClick={closeNavbar}>
+        <img
+          src='https://cdn2.vectorstock.com/i/1000x1000/73/31/food-app-logo-vector-34017331.jpg'
+          alt='FOOD HOSTS Logo'
+          style={{ width: '40px', height: '40px', borderRadius: '50%', marginRight: '10px' }}
+        />
+        FOOD HOSTS
+      </Link>
         <button
   className='navbar-toggler'
   type='button'
@@ -44,14 +48,14 @@ const Header = () => {
           <ul className='navbar-nav ml-auto'>
             <li className='nav-item active'>
               <Link className='nav-link' to='/'>
-              <i class="bi bi-house"></i> Home <span className='sr-only'>(current)</span>
+              <i className="bi bi-house"></i> Home <span className='sr-only'>(current)</span>
               </Link>
             </li>
             {userInfo ? (
               <>
                 <li className='nav-item'>
                   <Link className='nav-link' to='/books' onClick={closeNavbar}>
-                  {/* <i class="bi bi-book"></i>  */}
+                  {/* <i className="bi bi-book"></i>  */}
                   Restaurants
                   </Link>
                 </li>
@@ -63,7 +67,7 @@ const Header = () => {
                     aria-haspopup='true'
                     aria-expanded='false'
                     onClick={closeNavbar}>
-                    <i class="bi bi-person-circle"></i> {userInfo.name}
+                    <i className="bi bi-person-circle"></i> {userInfo.name}
                   </Link>
                   <div className='dropdown-menu'>
                     {/* <Link className='dropdown-item' to='/profile' onClick={closeNavbar}>
@@ -74,7 +78,7 @@ const Header = () => {
                     </Link>
                     <div className='dropdown-divider'></div>
                     <button onClick={logoutHandler} className='dropdown-item text-danger'>
-                    <i class="bi bi-box-arrow-in-left"></i> Logout
+                    <i className="bi bi-box-arrow-in-left"></i> Logout
                     </button>
                   </div>
                 </li>
@@ -83,7 +87,7 @@ const Header = () => {
               <>
                 <li className='nav-item'>
                   <Link className='nav-link' to='/login' onClick={closeNavbar}>
-                  Login <i class="bi bi-box-arrow-in-right"></i> 
+                  Login <i className="bi bi-box-arrow-in-right"></i> 
                   </Link>
                 </li>
               </>

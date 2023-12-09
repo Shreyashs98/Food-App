@@ -64,7 +64,7 @@ const BookDetail = () => {
         <div className='container'>
           {book ? (
             <>
-              <h1 className='text-center mb-4'>Update Book</h1>
+              <h1 className='text-center mb-4'>Update Restaurant Details</h1>
               <form onSubmit={formSubmitHandler}>
               <div className='form-group'>
                 <label htmlFor='category'>Select Restaurant Type</label>
@@ -128,7 +128,7 @@ const BookDetail = () => {
                 />
               </div>
                 <button type='submit' className='btn btn-success btn-block'>
-                  Update Restaurant
+                  Update Restaurant Details
                 </button>
               </form>
             </>
